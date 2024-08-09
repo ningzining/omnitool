@@ -14,7 +14,7 @@ func ParseRangeDate(start string, end string) (time.Time, time.Time, error) {
 		return time.Time{}, time.Time{}, err
 	}
 
-	return startDate, endDate, nil
+	return startDate, time.Date(endDate.Year(), endDate.Month(), endDate.Day(), 23, 59, 59, 0, time.Local), nil
 }
 
 func ParseRangeTime(start string, end string) (time.Time, time.Time, error) {
