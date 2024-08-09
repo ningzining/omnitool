@@ -35,3 +35,37 @@ func HexToBinary(hexStr string) (string, error) {
 
 	return fmt.Sprintf("%0*b", binaryStrLen, decimal), nil
 }
+
+// BinaryToDecimal
+// 将二进制字符串转换为十进制数字
+func BinaryToDecimal(binaryStr string) (int64, error) {
+	decimal, err := strconv.ParseInt(binaryStr, 2, 64)
+	if err != nil {
+		return 0, err
+	}
+
+	return decimal, nil
+}
+
+// DecimalToBinary
+// 将十进制转换为二进制字符串
+func DecimalToBinary(decimal int64) string {
+	return fmt.Sprintf("%b", decimal)
+}
+
+// DecimalToHex
+// 将十进制转换为十六进制字符串
+func DecimalToHex(decimal int64) string {
+	return fmt.Sprintf("%x", decimal)
+}
+
+// HexToDecimal
+// 将十六进制字符串转换为十进制
+func HexToDecimal(hexStr string) (int64, error) {
+	decimal, err := strconv.ParseInt(hexStr, 16, 64)
+	if err != nil {
+		return 0, err
+	}
+
+	return decimal, nil
+}
